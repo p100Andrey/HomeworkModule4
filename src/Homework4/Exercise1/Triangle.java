@@ -1,22 +1,21 @@
 package Homework4.Exercise1;
 
-import java.util.Scanner;
+public class Triangle extends Figure {
+    private double sideX, sideY, sideZ;
 
-public class Triangle {
-    static Scanner triangle = new Scanner(System.in);
+    public Triangle(double sideA, double sideB, double sideC) {
+        this.sideX = sideA;
+        this.sideY = sideB;
+        this.sideZ = sideC;
+    }
 
-    public static void main(String args[]) {
-        System.out.println("Введите стороны треугольника: ");
-        System.out.println("Сторона А: ");
-        double sideA = triangle.nextDouble();
-        System.out.println("Сторона B: ");
-        double sideB = triangle.nextDouble();
-        System.out.println("Сторона C: ");
-        double sideC = triangle.nextDouble();
+    @Override
+    public double area() {
         int two = 2;
-        double halfP = (sideA + sideB + sideC) / two;
-        double areaTriangle = Math.sqrt(halfP * (halfP - sideA) *
-                (halfP - sideB) * (halfP - sideC));
-        System.out.println("Площадь прямоугольника равна: " + areaTriangle);
+        double halfP = (sideX + sideY + sideZ) / two;
+        double area = Math.sqrt(halfP * (halfP - sideX) *
+                (halfP - sideY) * (halfP - sideZ));
+        return area;
     }
 }
+
